@@ -1,5 +1,8 @@
 \c "SVI_Db1";
 
+--
+-- clients
+--
 INSERT INTO public.clients(
     first_name, last_name, middle_name, birthday, id_doc_kind, id_doc_serial, id_doc_number, id_doc_issue_date, phone)
     VALUES ('Бахтияров', 'Олег', 'Денисович', '1957-01-18', 21, '11 11', '222222', '2021-12-05', '+7(905)1112233');
@@ -16,6 +19,9 @@ INSERT INTO public.clients(
     first_name, last_name, middle_name, birthday, id_doc_kind, id_doc_serial, id_doc_number, id_doc_issue_date, phone)
     VALUES ('Воробьёва', 'Сара', 'Лаврентьевна', '1974-06-26', 21, '99 99', '123456', '2015-02-11', '+7(909)9167971');
 
+--
+-- products
+--
 INSERT INTO public.products(name)
     VALUES ('Текущий счёт');
 INSERT INTO public.products(name)
@@ -27,6 +33,9 @@ INSERT INTO public.products(name)
 INSERT INTO public.products(name)
     VALUES ('Карта Visa Gold');
 
+--
+-- client_product
+--
 INSERT INTO public.client_product(
     client_id, product_id, date_open, date_close, amount, currency, interest_rate)
     VALUES (1, 1, '1995-10-19', NULL, 100000, 'RUR', 0.1);
