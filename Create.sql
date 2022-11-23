@@ -20,7 +20,7 @@ CREATE TABLE clients
     id_doc_issue_date DATE          NOT NULL,
     phone             VARCHAR(20)   NOT NULL,
   
-    CONSTRAINT clients_pkey PRIMARY KEY (id)
+    CONSTRAINT clients_pk PRIMARY KEY (id)
 );
 
 --
@@ -33,17 +33,14 @@ CREATE TABLE products
     id   BIGINT       NOT NULL  DEFAULT NEXTVAL('products_id_seq'),
     name VARCHAR(255) NOT NULL,
   
-    CONSTRAINT products_pkey PRIMARY KEY (id)
+    CONSTRAINT products_pk PRIMARY KEY (id)
 );
 
 --
--- clients_products
+-- client_product
 --
-CREATE SEQUENCE clients_products_id_seq;
-
-CREATE TABLE clients_products
+CREATE TABLE client_product
 (
-    id            BIGINT  NOT NULL  DEFAULT NEXTVAL('clients_products_id_seq'),
     client_id     BIGINT  NOT NULL,
     product_id    BIGINT  NOT NULL,
     date_open     DATE    NOT NULL,
@@ -52,7 +49,7 @@ CREATE TABLE clients_products
     currency      CHAR(3) NOT NULL,
     interest_rate MONEY   NOT NULL,
   
-    CONSTRAINT clients_products_pkey PRIMARY KEY (id),
-    CONSTRAINT clients_products_fk_clients_id FOREIGN KEY (client_id) REFERENCES clients(id) ON DELETE CASCADE,
-    CONSTRAINT clients_products_fk_products_id FOREIGN KEY (product_id) REFERENCES products(id) ON DELETE CASCADE
+    CONSTRAINT client_product_pk PRIMARY KEY (client_id, product_id),
+    CONSTRAINT client_product_fk_clients_id FOREIGN KEY (client_id) REFERENCES clients(id) ON DELETE CASCADE,
+    CONSTRAINT client_product_fk_products_id FOREIGN KEY (product_id) REFERENCES products(id) ON DELETE CASCADE
 );

@@ -27,18 +27,18 @@ INSERT INTO public.products(name)
 INSERT INTO public.products(name)
     VALUES ('Карта Visa Gold');
 
-INSERT INTO public.clients_products(
+INSERT INTO public.client_product(
     client_id, product_id, date_open, date_close, amount, currency, interest_rate)
     VALUES (1, 1, '1995-10-19', NULL, 100000, 'RUR', 0.1);
-INSERT INTO public.clients_products(
+INSERT INTO public.client_product(
     client_id, product_id, date_open, date_close, amount, currency, interest_rate)
     VALUES (2, 3, '2022-03-01', NULL, 750000, 'RUR', 4.5);
-INSERT INTO public.clients_products(
+INSERT INTO public.client_product(
     client_id, product_id, date_open, date_close, amount, currency, interest_rate)
     VALUES (3, 1, '2020-08-30', NULL, 0, 'RUR', 0.1);
-INSERT INTO public.clients_products(
+INSERT INTO public.client_product(
     client_id, product_id, date_open, date_close, amount, currency, interest_rate)
     VALUES (3, 2, '2021-05-10', NULL, 1400000, 'RUR', 3);
-INSERT INTO public.clients_products(
+INSERT INTO public.client_product(
     client_id, product_id, date_open, date_close, amount, currency, interest_rate)
     VALUES (3, 5, '2022-06-10', NULL, 73281.65, 'RUR', 0);
